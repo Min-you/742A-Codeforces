@@ -3,10 +3,15 @@ using namespace std;
 typedef long long int ll;
 
 int main(){
-  int n;
+  int n, ans;
   cin >> n;
-  ll a = 1378;
-  // wrong answer when power is greater than 1
-  ll result = pow(a, n);
-  // need to work on the output of the last digit
+  if (n % 4 == 0 && n != 0){
+    ans = 4;
+  }
+  else{
+    ans = n % 4;
+  }
+  ans = pow(8, ans);
+  ans %= 10;
+  cout << ans << endl;
 }
